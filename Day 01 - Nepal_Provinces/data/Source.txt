@@ -1,0 +1,47 @@
+Map: Nepal Provinces — Day 1
+
+Dataset name:
+nepal_province_wgs84
+
+Source:
+National Geoportal of Nepal
+
+Source agency:
+Department of Survey of Nepal
+
+Dataset description:
+Layer contains 7 Provinces of Nepal.
+
+Format:
+ESRI Shapefile
+
+Geometry:
+Polygon (MultiPolygon)
+
+Feature count:
+7
+
+CRS:
+EPSG:4326 — WGS 84
+
+Encoding:
+UTF-8
+
+File size:
+2.48 MB
+
+Dataset publication date:
+Not specified
+
+Dataset version:
+Not specified
+
+Date accessed:
+12/29/2025
+
+Notes:
+The layer was downloaded from the National Geoportal
+of Nepal and used for a seven-province map.
+
+The metadata does not specify a publication date,
+temporal extent, or dataset version.
