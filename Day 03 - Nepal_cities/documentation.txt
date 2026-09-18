@@ -9,3 +9,30 @@ Mistakes I made: I jumbled the x and y during importing the data. Later after de
 
 X field = Longitude
 Y field = Latitude
+
+
+Day 3: Mapping Cities of Nepal Using Point Data
+
+What I did
+Added a city point dataset.
+Identified longitude and latitude fields.
+Imported point data into QGIS.
+Used EPSG:4326 for geographic coordinates.
+Styled city points.
+Added city labels.
+Combined cities with provinces and rivers.
+Exported the map.
+
+## Skills learned
+
+Point geometry
+CSV coordinate data
+Longitude and latitude
+X/Y field assignment
+EPSG:4326
+Point symbology
+Point labels
+
+
+##Reflection
+Day 3 introduced point data and helped me understand how locations can be represented using longitude and latitude. I learned that longitude is used for the X coordinate and latitude for the Y coordinate, (such a silly mistake but I make it every time..lol). I also learned that coordinate data must be assigned the correct CRS during import, otherwise it could create a hassle during the export.
