@@ -1,0 +1,47 @@
+Follow the link to download the river data:
+
+https://data.humdata.org/dataset/nepal-watercourses-rivers
+
+
+Day 2: Adding Nepal’s River Network to a Provincial Map
+
+What I did?
+
+Added Nepal’s river and stream network.
+
+Inspected the line-layer attributes.
+
+Explored possible ways to identify major rivers.
+
+Decided to retain the full stream network for learning.
+
+Adjusted layer order.
+
+Improved provincial boundary visibility.
+
+Styled rivers using line symbology.
+
+Exported the map.
+
+
+Skills learned
+
+Line geometry
+
+River-network visualization
+
+Layer ordering
+
+Line symbology
+
+Attribute inspection
+
+Map readability
+
+Avoiding premature filtering
+
+
+Reflection
+
+Day 2 helped me understand that not every line dataset contains a simple field identifying major rivers. Instead of forcing an unreliable filter, I retained the full stream network and focused on understanding the data structure and improving map readability. This was an important lesson in making decisions based on the available attributes
+
