@@ -1,0 +1,11 @@
+i used the same dataset for nepal which I got from the national geoportal 
+
+For the cities data, I used the Simplemaps Nepal Cities Database
+
+there were some inconsistent name like lat for latitude and lng for longitude.
+so, I changed the name and tried to import it.
+
+Mistakes I made: I jumbled the x and y during importing the data. Later after debugging I figured out what i had missed and changed back.
+
+X field = Longitude
+Y field = Latitude
