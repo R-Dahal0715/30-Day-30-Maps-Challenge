@@ -1,0 +1,26 @@
+# Day 6 — Attribute Tables and Feature Selection
+
+Today I moved from basic map production into basic GIS data analysis.
+
+### What I practiced
+
+* Inspecting attribute tables
+* Understanding fields and records
+* Identifying attribute data types
+* Selecting features manually
+* Selecting features using expressions
+* Selecting multiple features
+* Exporting selected features as a new spatial dataset
+
+### Practical exercise
+
+I used the Nepal provincial boundary layer and selected:
+
+* **Gandaki Province**
+* **Koshi Province**
+
+I then exported the selected provinces as a separate spatial dataset while preserving the original layer.
+
+### Key takeaway
+
+A GIS layer is both a spatial dataset and an attribute dataset. Feature selection allows specific records and their associated geometries to be identified and extracted for further analysis.
