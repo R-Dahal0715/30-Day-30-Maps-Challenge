@@ -1,0 +1,266 @@
+# Day 07 — Spatial Selection & Basic Spatial Analysis
+
+## Overview
+
+Day 7 marked the transition from basic GIS mapping and cartographic visualization toward **spatial analysis**.
+
+The objective was to use existing Nepal spatial datasets from Phase 1 to investigate the spatial relationship between selected provinces, cities, and rivers. Rather than downloading new data, the existing Nepal provinces, cities, and river datasets were reused to practice reproducible spatial-selection workflows.
+
+The analysis focused on **Gandaki and Koshi provinces**.
+
+---
+
+## Objective
+
+The main objective was to learn how to:
+
+* Select geographic features using attribute information.
+* Select features based on their spatial relationship with other features.
+* Distinguish between `within` and `intersect` spatial relationships.
+* Export selected features as new analytical datasets.
+* Preserve original datasets while creating derived GIS outputs.
+* Improve map symbology so that analytical results can be interpreted clearly.
+
+The central spatial question was:
+
+> **Which cities and rivers are spatially associated with Gandaki and Koshi provinces?**
+
+---
+
+## Data Used
+
+The analysis reused datasets developed during the earlier phases of the 30 Days GIS Challenge.
+
+### 1. Nepal Provinces
+
+**Geometry:** Polygon
+
+Used to identify and select Gandaki and Koshi provinces.
+
+### 2. Nepal Cities
+
+**Geometry:** Point
+
+Used to identify cities located within the selected provinces.
+
+### 3. Nepal Rivers / Streams
+
+**Geometry:** Line
+
+Used to identify river and stream features intersecting the selected provinces.
+
+No new external datasets were downloaded for Day 7.
+
+---
+
+## Workflow
+
+### Step 1 — Project preparation
+
+A new QGIS project was created for Day 7.
+
+The existing Nepal province, city, and river layers were added to the project.
+
+The CRS of the river dataset was also checked and corrected through proper reprojection to ensure that the layer was appropriately aligned with the other datasets.
+
+---
+
+### Step 2 — Selecting Gandaki and Koshi
+
+The Nepal province layer was opened in the attribute table.
+
+Gandaki and Koshi were selected using their attribute information.
+
+This demonstrated **attribute-based selection**, where features are selected according to information stored in their attribute table.
+
+Conceptually:
+
+```text
+Province attributes
+        ↓
+Gandaki OR Koshi
+        ↓
+Selected province polygons
+```
+
+---
+
+### Step 3 — Selecting cities by location
+
+The selected provinces were then used as the reference features for a spatial selection.
+
+The city layer was selected using the spatial relationship:
+
+> **within**
+
+This identified city points located within Gandaki and Koshi.
+
+The selected city features were then exported as a new analytical layer:
+
+```text
+Gandaki_Koshi_Cities
+```
+
+---
+
+### Step 4 — Selecting rivers by location
+
+The same approach was applied to the river dataset.
+
+The spatial relationship used was:
+
+> **intersect**
+
+This identified river and stream features that intersected the selected Gandaki and Koshi province boundaries.
+
+The selected features were exported as:
+
+```text
+Gandaki_Koshi_Rivers
+```
+
+---
+
+## Important GIS Concepts Learned
+
+### Attribute Selection vs Spatial Selection
+
+Day 7 demonstrated the difference between two fundamental GIS operations.
+
+**Attribute selection:**
+
+```text
+Province = Gandaki OR Koshi
+```
+
+uses information stored in the attribute table.
+
+**Spatial selection:**
+
+```text
+Cities → within → Gandaki + Koshi
+```
+
+uses the geometric relationship between layers.
+
+This distinction is fundamental to ecological and environmental GIS analysis.
+
+---
+
+### `Within` vs `Intersect`
+
+The city analysis used:
+
+```text
+Cities
+   ↓
+within
+   ↓
+Selected provinces
+```
+
+while the river analysis used:
+
+```text
+Rivers
+   ↓
+intersect
+   ↓
+Selected provinces
+```
+
+These relationships answer different spatial questions and are important when designing GIS workflows for ecological research.
+
+---
+
+## A Funny but Useful Learning Moment 😂
+
+There was a small moment of confusion during the river-selection analysis.
+
+Initially, it appeared that the spatial selection had failed because the selected rivers were not visually obvious on the map.
+
+After checking the workflow, it turned out that **the analysis was completely correct**.
+
+The problem was simply that the selected rivers and the selected province areas were displayed using similar colors. The selected river segments therefore blended visually into the selected province symbology.
+
+In other words:
+
+> **The GIS analysis was right; my symbology was misleading me.** 😂
+
+This was an important reminder that GIS has two separate but connected components:
+
+1. **Analysis**
+2. **Visualization**
+
+A correct spatial operation can still be difficult to interpret if the cartographic styling does not provide sufficient visual contrast.
+
+This experience reinforced the importance of checking the actual selection count and attribute table instead of judging an analytical result solely from its appearance on the map.
+
+---
+
+## Outputs
+
+The main analytical output was a GeoPackage containing the derived layers:
+
+```text
+Day_07_Spatial_Analysis.gpkg
+│
+├── Gandaki_Koshi_Cities
+└── Gandaki_Koshi_Rivers
+```
+
+A final map was also exported showing the spatial relationship between:
+
+* Gandaki Province
+* Koshi Province
+* Selected cities
+* Selected rivers
+
+---
+
+## Skills Practiced
+
+By the end of Day 7, the following GIS skills were practiced:
+
+* Attribute-based feature selection
+* Select by Location
+* `Within` spatial relationship
+* `Intersect` spatial relationship
+* Working with selected features
+* Exporting selected features
+* Creating derived GIS datasets
+* GeoPackage-based data storage
+* Basic analytical cartography
+* Interpreting selection results
+* Diagnosing apparent GIS errors
+* Understanding the importance of symbology for spatial interpretation
+
+---
+
+## Reflection
+
+Day 7 represented an important shift in the learning process.
+
+Earlier days focused primarily on:
+
+> **How can I display geographic data effectively?**
+
+Day 7 introduced a more analytical question:
+
+> **How can I use geographic relationships between datasets to answer a spatial question?**
+
+This is a fundamental transition from **map-making toward spatial analysis**.
+
+The workflow also demonstrated an important principle that will become increasingly relevant in ecological GIS:
+
+> **GIS is not just about producing maps. It is about using spatial relationships to extract information from geographic data.**
+
+The same concepts can later be applied to questions such as:
+
+* Which species observations occur inside protected areas?
+* Which sampling sites are near rivers?
+* Which roads intersect wildlife habitat?
+* Which land-cover types occur within a study area?
+* Which ecological observations fall inside a particular watershed?
+
+Day 7 therefore established the foundation for more advanced spatial analysis in the later stages of the 30 Days GIS Challenge.
